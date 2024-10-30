@@ -1,0 +1,15 @@
+artifact_uri: file:///c:/Users/DELL/OneDrive/Documents/GitHub/MLFlow/mlruns/177362931742648708/246e880e36224cf382eb9c5fec703641/artifacts
+end_time: 1730296007817
+entry_point_name: ''
+experiment_id: '177362931742648708'
+lifecycle_stage: active
+run_id: 246e880e36224cf382eb9c5fec703641
+run_name: placid-carp-951
+run_uuid: 246e880e36224cf382eb9c5fec703641
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1730295999979
+status: 3
+tags: []
+user_id: DELL

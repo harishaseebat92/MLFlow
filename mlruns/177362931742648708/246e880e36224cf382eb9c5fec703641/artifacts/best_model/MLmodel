@@ -1,0 +1,17 @@
+artifact_path: best_model
+flavors:
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.4.1.post1
+mlflow_version: 2.17.1
+model_size_bytes: 196
+model_uuid: 215379ab50a4432eacf5b7cd3a8ddded
+run_id: 246e880e36224cf382eb9c5fec703641
+saved_input_example_info:
+  artifact_path: input_example.json
+  pandas_orient: split
+  serving_input_path: serving_input_example.json
+  type: dataframe
+utc_time_created: '2024-10-30 13:46:40.038494'

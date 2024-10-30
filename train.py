@@ -14,6 +14,11 @@ df = pd.read_csv(url)
 # Prepare data
 X_train, X_test, y_train, y_test = train_test_split(df[["rm"]], df["medv"], test_size=0.33, random_state=42)
 
+
+# Initialize the best model
+best_model = None
+best_mse = float('inf')
+
 # Define models for regression
 models = [
     (
@@ -31,12 +36,13 @@ models = [
 ]
 
 # Set up MLflow experiment
-mlflow.set_experiment("LR_RF")
+mlflow.set_experiment("LR_RF1")
 mlflow.set_tracking_uri("http://127.0.0.1:5000")
 # List to store performance reports
 reports = []
 
 # Train and log each model
+i = 0
 for model_name, model, train_set, test_set in models:
     X_train, y_train = train_set
     X_test, y_test = test_set
@@ -61,17 +67,24 @@ for model_name, model, train_set, test_set in models:
         # Infer the model signature
         signature = infer_signature(X_train, y_pred)
         
-        # Log the model with its metadata
-        mlflow.sklearn.log_model(
-            sk_model=model,
-            artifact_path=f"{model_name}_model",
-            signature=signature,
-            input_example=X_train.head()
-        )
+        # # Log the model with its metadata
+        # mlflow.sklearn.log_model(
+        #     sk_model=model,
+        #     artifact_path=f"{model_name}_model",
+        #     signature=signature,
+        #     input_example=X_train.head()
+        # )
 
         # Append report to list for later inspection if needed
         reports.append({"model_name": model_name, "mse": mse, "r2_score": r2})
 
-# Print out the performance reports for each model
-for report in reports:
-    print(f"Model: {report['model_name']}, MSE: {report['mse']:.2f}, R²: {report['r2_score']:.2f}")
+        if mse < best_mse:
+            best_mse  = mse
+            best_model = reports[i]["model_name"]
+    i += 1
+
+# Create an example input for logging (keeping feature names by using DataFrame)
+input_ex = X_train.iloc[[0]]  # Input example as DataFrame to retain feature names
+# Log the best model
+mlflow.sklearn.log_model(best_model, "best_model", input_example=input_ex)
+print("Best model is logged.")

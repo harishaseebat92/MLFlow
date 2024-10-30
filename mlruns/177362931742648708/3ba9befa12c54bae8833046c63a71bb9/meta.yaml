@@ -1,0 +1,15 @@
+artifact_uri: file:///c:/Users/DELL/OneDrive/Documents/GitHub/MLFlow/mlruns/177362931742648708/3ba9befa12c54bae8833046c63a71bb9/artifacts
+end_time: 1730286620214
+entry_point_name: ''
+experiment_id: '177362931742648708'
+lifecycle_stage: active
+run_id: 3ba9befa12c54bae8833046c63a71bb9
+run_name: Random Forest
+run_uuid: 3ba9befa12c54bae8833046c63a71bb9
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1730286620082
+status: 3
+tags: []
+user_id: DELL

@@ -1,0 +1,15 @@
+artifact_uri: file:///c:/Users/DELL/OneDrive/Documents/GitHub/MLFlow/mlruns/320750520040913195/faa3bb010fe64dcb99c13faa1e4e1f54/artifacts
+end_time: 1730285989873
+entry_point_name: ''
+experiment_id: '320750520040913195'
+lifecycle_stage: active
+run_id: faa3bb010fe64dcb99c13faa1e4e1f54
+run_name: fortunate-ant-407
+run_uuid: faa3bb010fe64dcb99c13faa1e4e1f54
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1730285972670
+status: 3
+tags: []
+user_id: DELL
